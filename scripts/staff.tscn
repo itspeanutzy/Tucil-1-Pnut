@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://3d765mig7j1h"]
+
+[ext_resource type="Script" uid="uid://dybw2ce8v1ybh" path="res://scripts/staff.gd" id="1_as4bp"]
+[ext_resource type="Texture2D" uid="uid://cb7qqm0eciv3p" path="res://assets/magic01crystalwand.png" id="2_gyonc"]
+
+[node name="Staff" type="Node2D" unique_id=727849618 node_paths=PackedStringArray("RotationOffset", "magic", "Cooldown")]
+script = ExtResource("1_as4bp")
+RotationOffset = NodePath("RotationOffset")
+magic = NodePath("RotationOffset/Sprite2D/magic")
+Cooldown = NodePath("ShootTimer")
+
+[node name="RotationOffset" type="Node2D" parent="." unique_id=1282822669]
+
+[node name="Sprite2D" type="Sprite2D" parent="RotationOffset" unique_id=818465692]
+rotation = 0.7853982
+texture = ExtResource("2_gyonc")
+
+[node name="magic" type="Marker2D" parent="RotationOffset/Sprite2D" unique_id=386223814]
+position = Vector2(11.313709, -11.313709)
+
+[node name="ShootTimer" type="Timer" parent="." unique_id=401880114]
+one_shot = true
